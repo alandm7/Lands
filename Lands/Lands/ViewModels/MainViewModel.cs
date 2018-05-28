@@ -13,6 +13,11 @@
             get;
             set;
         }
+        public LandViewModel Land
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Constructor

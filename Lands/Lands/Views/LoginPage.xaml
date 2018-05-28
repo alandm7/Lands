@@ -105,7 +105,11 @@
                     <Image
                         Source="facebook_logo"
                          WidthRequest="100">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LoginFacebookCommand}"/>
+                        </Image.GestureRecognizers>
                     </Image>
+                    
                     <Image
                         Source="twitter_logo"
                          WidthRequest="75">
