@@ -4,7 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="Lands.ViewModels.LandPage" 
     BindingContext="{Binding Main, Source={StaticResource Locator}}"
-    Title="Land">
+    Icon="ic_information"
+    Title="Information">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Land}">
@@ -25,7 +26,7 @@
                     <Label
                         Grid.Column="0"
                         Grid.Row="0"
-                        Text="Capital:"
+                        Text="Capital"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -45,7 +46,7 @@
                         Grid.Column="1"
                         Grid.Row="1"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Population, StringFormat='{0:N0}'}"
+                        Text="{Binding Land.Population}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -58,7 +59,7 @@
                         Grid.Column="1"
                         Grid.Row="2"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Area, StringFormat='{0:N0}'}"
+                        Text="{Binding Land.Area}"
                         TextColor="Black">
                     </Label>
                     <Label
@@ -136,7 +137,7 @@
                         Grid.Column="1"
                         Grid.Row="8"
                         FontAttributes="Bold"
-                        Text="{Binding Land.Gini, StringFormat='{0:N2}'}"
+                        Text="{Binding Land.Gini}"
                         TextColor="Black">
                     </Label>
                     <Label
