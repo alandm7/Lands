@@ -4,10 +4,15 @@
     using Views;
     using System.Windows.Input;
     using Xamarin.Forms;
+    using Services;
+    using Helpers;
 
     public class LoginViewModel : BaseViewModel
     {
 
+        #region Services
+        private ApiService apiService;
+        #endregion
 
         #region Attributes
         private string email;
@@ -50,11 +55,12 @@
         #region Constructors
         public LoginViewModel()
         {
+            this.apiService = new ApiService();
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "alan@mail.com";
-            this.Password = "abc";
+            this.Email = "alandemiguel@gmail.com";
+            this.Password = "123456";
 
             //http://restcountries.eu/rest/v2/all
 
@@ -78,7 +84,7 @@
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     "You must enter an email.",
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
             if (string.IsNullOrEmpty(this.Password))
@@ -86,24 +92,70 @@
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
                     "You must enter an password.",
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
 
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            if (this.Email != "alan@mail.com" || this.Password != "abc")
+            /* if (this.Email != "alan@mail.com" || this.Password != "abc")
+             {
+                 this.IsRunning = false;
+                 this.IsEnabled = true;
+                 await Application.Current.MainPage.DisplayAlert(
+                     "Error",
+                     "Email or password incorrect",
+                     "Accept");
+                 this.Password = string.Empty;
+                 return;
+             }
+             */
+            var connection = await this.apiService.CheckConnection();
+            if(!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Email or password incorrect",
-                    "Accept");
+                    Languages.Error,
+                    connection.Message,
+                    Languages.Accept);
+                
+                return;
+            }
+
+            var token =  await this.apiService.GetToken(
+                "http://landsapi8.azurewebsites.net",
+                this.Email, 
+                this.Password);
+
+            if(token == null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    Languages.EmailValidator,
+                     Languages.Accept);
+                
+                return;
+            }
+
+            if(string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    Languages.Error,
+                    token.ErrorDescription,
+                    Languages.Accept);
                 this.Password = string.Empty;
                 return;
             }
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
+            mainViewModel.Lands = new LandsViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
 
             this.IsRunning = false;
             this.IsEnabled = true;
@@ -111,8 +163,7 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            MainViewModel.GetInstance().Lands = new LandsViewModel();
-            await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
+            
 
         }
         #endregion
