@@ -19,6 +19,7 @@
             CachedImageRenderer.Init(true); 
             LoadApplication(new App());
         }
+
     }
 }
 

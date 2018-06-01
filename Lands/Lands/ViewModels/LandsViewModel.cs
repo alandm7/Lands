@@ -68,9 +68,9 @@
                 await Application.Current.MainPage.Navigation.PopAsync();
                 return;
             }
-
+            var aPILands = Application.Current.Resources["APILands"].ToString();
             var response = await this.apiservice.GetList<Land>(
-                "http://restcountries.eu",
+                aPILands,
                 "/rest",
                 "/v2/all");
             if (!response.IsSuccess)

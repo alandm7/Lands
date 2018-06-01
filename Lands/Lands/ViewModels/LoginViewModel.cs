@@ -6,6 +6,7 @@
     using Xamarin.Forms;
     using Services;
     using Helpers;
+    using System;
 
     public class LoginViewModel : BaseViewModel
     {
@@ -112,7 +113,7 @@
              }
              */
             var connection = await this.apiService.CheckConnection();
-            if(!connection.IsSuccess)
+            if (!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
@@ -120,28 +121,29 @@
                     Languages.Error,
                     connection.Message,
                     Languages.Accept);
-                
+
                 return;
             }
+            var apiSecurity = Application.Current.Resources["APISecurity"].ToString();
 
-            var token =  await this.apiService.GetToken(
-                "http://landsapi8.azurewebsites.net",
-                this.Email, 
+            var token = await this.apiService.GetToken(
+               apiSecurity,
+                this.Email,
                 this.Password);
 
-            if(token == null)
+            if (token == null)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    Languages.EmailValidator,
+                    "Debes de ingresar un email",
                      Languages.Accept);
-                
+
                 return;
             }
 
-            if(string.IsNullOrEmpty(token.AccessToken))
+            if (string.IsNullOrEmpty(token.AccessToken))
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
@@ -156,7 +158,7 @@
             mainViewModel.Token = token.AccessToken;
             mainViewModel.TokenType = token.TokenType;
 
-            if(this.IsRemembered)
+            if (this.IsRemembered)
             {
                 Settings.Token = token.AccessToken;
                 Settings.TokenType = token.TokenType;
@@ -164,7 +166,7 @@
 
             mainViewModel.Lands = new LandsViewModel();
             // await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
-            
+
 
             Application.Current.MainPage = new MasterPage();
 
@@ -174,9 +176,23 @@
             this.Email = string.Empty;
             this.Password = string.Empty;
 
-            
+
 
         }
-        #endregion
+
+        public ICommand RegisterCommand
+        {
+            get
+            {
+                return new RelayCommand(Register);
+            }
+            #endregion
+        }
+
+        private async void Register()
+        {
+            MainViewModel.GetInstance().Register = new RegisterViewModel();
+            await Application.Current.MainPage.Navigation.PushAsync(new RegisterPage()); 
+        }
     }
 }

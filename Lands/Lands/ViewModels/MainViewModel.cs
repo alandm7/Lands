@@ -49,6 +49,12 @@
             get;
             set;
         }
+
+        public RegisterViewModel Register
+        {
+            get;
+            set;
+        }
         #endregion
 
         #region Constructor

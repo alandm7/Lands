@@ -5,7 +5,12 @@
              x:Class="Lands.App">
 	<Application.Resources>
         <ResourceDictionary>
+            <!-- Parameters -->
             <infra:InstanceLocator x:Key="Locator"/>
+
+            <!-- Parameters -->
+            <x:String x:Key="APILands">http://restcountries.eu</x:String>
+            <x:String x:Key="APISecurity">http://landsapi8.azurewebsites.net</x:String>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>
