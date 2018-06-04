@@ -15,6 +15,13 @@
                 WidthRequest="100">
                 
             </Image>
+            <Label
+                Text="{Binding User.FullName}"
+                TextColor="White"
+                FontSize="Large"
+                FontAttributes="Bold">
+                
+            </Label>
             <ListView 
                 BackgroundColor="Navy"
                 ItemsSource="{Binding Menus}"
