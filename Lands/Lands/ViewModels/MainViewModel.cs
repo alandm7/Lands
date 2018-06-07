@@ -6,33 +6,38 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
-    public class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
+        #region Atributes
+        private UserLocal user;
+        #endregion
+
         #region Properties
         public List<Land> LandsList
         {
             get;
             set;
         }
-        public string Token
+        public TokenResponse Token
         {
             get;
             set;
         }
 
-        public string TokenType
-        {
-            get;
-            set;
-        }
-
+ 
         public ObservableCollection<MenuItemViewModel> Menus
         {
             get;
             set;
         }
 
-        public User User
+        public UserLocal User
+        {
+            get { return this.user; }
+            set { SetValue(ref this.user, value); }
+        }
+
+        public MyProfileViewModel MyProfile
         {
             get;
             set;
@@ -58,6 +63,11 @@
         }
 
         public RegisterViewModel Register
+        {
+            get;
+            set;
+        }
+        public ChangePasswordViewModel ChangePassword
         {
             get;
             set;

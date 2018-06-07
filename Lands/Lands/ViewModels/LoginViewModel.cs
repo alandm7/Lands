@@ -6,13 +6,14 @@
     using Xamarin.Forms;
     using Services;
     using Helpers;
-    using System;
+
 
     public class LoginViewModel : BaseViewModel
     {
 
         #region Services
         private ApiService apiService;
+        private DataService dataService;
         #endregion
 
         #region Attributes
@@ -57,10 +58,11 @@
         public LoginViewModel()
         {
             this.apiService = new ApiService();
+            this.dataService = new DataService();
             this.IsRemembered = true;
             this.isEnabled = true;
 
-            this.Email = "alandemiguel@gmail.com";
+            this.Email = "alan@mail.com";
             this.Password = "123456";
 
             //http://restcountries.eu/rest/v2/all
@@ -69,6 +71,20 @@
         #endregion
 
         #region Commands
+        public ICommand LoginFacebookComand
+        {
+            get
+            {
+                return new RelayCommand(LoginFacebook);
+            }
+        }
+
+        private async void LoginFacebook()
+        {
+            await Application.Current.MainPage.Navigation.PushAsync(new LoginFacebookPage());
+        }
+
+
         public ICommand LoginCommand
         {
             get
@@ -149,7 +165,7 @@
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     Languages.Error,
-                    token.ErrorDescription,
+                    Languages.LoginError,
                     Languages.Accept);
                 this.Password = string.Empty;
                 return;
@@ -159,19 +175,27 @@
                 apiSecurity,
                 "/api",
                 "/Users/GetUserByEmail",
+                token.TokenType,
+                token.AccessToken,
                 this.Email);
 
+            var userLocal = Converter.ToUserLocal(user);
+            userLocal.Password = this.Password;
 
             var mainViewModel = MainViewModel.GetInstance();
-            mainViewModel.Token = token.AccessToken;
-            mainViewModel.TokenType = token.TokenType;
-            mainViewModel.User = user;
+            mainViewModel.Token = token;
+            mainViewModel.User = userLocal;
 
             if (this.IsRemembered)
             {
-                Settings.Token = token.AccessToken;
-                Settings.TokenType = token.TokenType;
+                Settings.IsRemembered = "true";
             }
+            else
+            {
+                Settings.IsRemembered = "false";
+            }
+            this.dataService.DeleteAllAndInsert(userLocal);
+            this.dataService.DeleteAllAndInsert(token);
 
             mainViewModel.Lands = new LandsViewModel();
             // await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());

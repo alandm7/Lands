@@ -132,4 +132,235 @@
   <data name="Rememberme" xml:space="preserve">
     <value>Lembre-se de mim neste dispositivo</value>
   </data>
+  <data name="EmailValidation" xml:space="preserve">
+    <value>Você precisa inserir o seu endereço de email.</value>
+  </data>
+  <data name="PasswordValidation" xml:space="preserve">
+    <value>Digite uma senha.</value>
+  </data>
+  <data name="SomethingWrong" xml:space="preserve">
+    <value>Algo deu errado, Por favor tente novamente.</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Logon</value>
+  </data>
+  <data name="EMail" xml:space="preserve">
+    <value>Email:</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha:</value>
+  </data>
+  <data name="PasswordPlaceHolder" xml:space="preserve">
+    <value>Insira sua senha</value>
+  </data>
+  <data name="Forgot" xml:space="preserve">
+    <value>Esqueceu a Senha?</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>&amp;Registrar...</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Pesquisar</value>
+  </data>
+  <data name="Countries" xml:space="preserve">
+    <value>PAÍSES</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Informações</value>
+  </data>
+  <data name="Capital" xml:space="preserve">
+    <value>Capital</value>
+  </data>
+  <data name="Population" xml:space="preserve">
+    <value>População</value>
+  </data>
+  <data name="Area" xml:space="preserve">
+    <value>Área</value>
+  </data>
+  <data name="AlphaCode2" xml:space="preserve">
+    <value>O código alfa 2:!</value>
+  </data>
+  <data name="AlphaCode3" xml:space="preserve">
+    <value>Código Alfa 3:!</value>
+  </data>
+  <data name="Region" xml:space="preserve">
+    <value>Região</value>
+  </data>
+  <data name="Subregion" xml:space="preserve">
+    <value>Sub-região</value>
+  </data>
+  <data name="Demonym" xml:space="preserve">
+    <value>Gentílico</value>
+  </data>
+  <data name="GINI" xml:space="preserve">
+    <value>GINI:!</value>
+  </data>
+  <data name="NativeName" xml:space="preserve">
+    <value>Nome nativo</value>
+  </data>
+  <data name="NumericCode" xml:space="preserve">
+    <value>Código numérico</value>
+  </data>
+  <data name="CIOC" xml:space="preserve">
+    <value>DIEGO:!</value>
+  </data>
+  <data name="Borders" xml:space="preserve">
+    <value>Bordas</value>
+  </data>
+  <data name="Currencies" xml:space="preserve">
+    <value>Moedas</value>
+  </data>
+  <data name="German" xml:space="preserve">
+    <value>Alemão</value>
+  </data>
+  <data name="Spanish" xml:space="preserve">
+    <value>Espanhol</value>
+  </data>
+  <data name="French" xml:space="preserve">
+    <value>Francês</value>
+  </data>
+  <data name="Japanese" xml:space="preserve">
+    <value>Japonês</value>
+  </data>
+  <data name="Italian" xml:space="preserve">
+    <value>Italiano</value>
+  </data>
+  <data name="Brazilian" xml:space="preserve">
+    <value>Brasileiro</value>
+  </data>
+  <data name="Portuguese" xml:space="preserve">
+    <value>Português</value>
+  </data>
+  <data name="Dutch" xml:space="preserve">
+    <value>Holandês</value>
+  </data>
+  <data name="Croatian" xml:space="preserve">
+    <value>Croata</value>
+  </data>
+  <data name="Persian" xml:space="preserve">
+    <value>Persa</value>
+  </data>
+  <data name="Translations" xml:space="preserve">
+    <value>Traduções</value>
+  </data>
+  <data name="MyLanguages" xml:space="preserve">
+    <value>Idiomas</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MyProfile" xml:space="preserve">
+    <value>Meu Perfil</value>
+  </data>
+  <data name="Statics" xml:space="preserve">
+    <value>ESTÁTICA</value>
+  </data>
+  <data name="LogOut" xml:space="preserve">
+    <value>Fazer Logoff</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Registar Novo Formando</value>
+  </data>
+  <data name="ChangeImage" xml:space="preserve">
+    <value>Tocar a imagem de chage isso!</value>
+  </data>
+  <data name="FirstNameLabel" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="FirstNamePlaceHolder" xml:space="preserve">
+    <value>Por favor, informe o Primeiro Nome</value>
+  </data>
+  <data name="FirstNameValidation" xml:space="preserve">
+    <value>Você deve digitar o nome</value>
+  </data>
+  <data name="LastNameLabel" xml:space="preserve">
+    <value>Sobrenome</value>
+  </data>
+  <data name="LastNamePlaceHolder" xml:space="preserve">
+    <value>Digite o sobrenome ...!</value>
+  </data>
+  <data name="LastNameValidation" xml:space="preserve">
+    <value>Você deve inserir um nome.</value>
+  </data>
+  <data name="PhoneLabel" xml:space="preserve">
+    <value>Telefone</value>
+  </data>
+  <data name="PhonePlaceHolder" xml:space="preserve">
+    <value>Digite o telefone ...!</value>
+  </data>
+  <data name="PhoneValidation" xml:space="preserve">
+    <value>Você deve digitar um número de telefone.</value>
+  </data>
+  <data name="ConfirmLabel" xml:space="preserve">
+    <value>Confirmar</value>
+  </data>
+  <data name="ConfirmPlaceHolder" xml:space="preserve">
+    <value>Digite a senha…</value>
+  </data>
+  <data name="ConfirmValidation" xml:space="preserve">
+    <value>Você deve inserir uma confirmação.</value>
+  </data>
+  <data name="EmailValidation2" xml:space="preserve">
+    <value>Você deve inserir um endereço de email válido.</value>
+  </data>
+  <data name="PasswordValidation2" xml:space="preserve">
+    <value>A senha deve ter pelo menos 6 caracteres</value>
+  </data>
+  <data name="ConfirmValidation2" xml:space="preserve">
+    <value>A nova senha e senha de confirmação não coincidem.</value>
+  </data>
+  <data name="UserRegisteredMessage" xml:space="preserve">
+    <value>O usuário foi criado, agora você pode logar com este email e senha.</value>
+  </data>
+  <data name="SourceImageQuestion" xml:space="preserve">
+    <value>Onde você quer tirar a foto ?!</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="FromGallery" xml:space="preserve">
+    <value>Da galeria</value>
+  </data>
+  <data name="FromCamera" xml:space="preserve">
+    <value>Da Camera</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvar</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Alterar Senha</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Senha atual</value>
+  </data>
+  <data name="CurrentPasswordPlaceHolder" xml:space="preserve">
+    <value>Insira sua senha atual.</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nova Senha:</value>
+  </data>
+  <data name="NewPasswordPlaceHolder" xml:space="preserve">
+    <value>Inserir a nova senha</value>
+  </data>
+  <data name="ConnectionError1" xml:space="preserve">
+    <value>Por favor, ligue suas configurações de internet.</value>
+  </data>
+  <data name="ConnectionError2" xml:space="preserve">
+    <value>Verifique a Conexão com a Internet.</value>
+  </data>
+  <data name="LoginError" xml:space="preserve">
+    <value>E-mail ou senha incorretos.</value>
+  </data>
+  <data name="ChagePasswordConfirm" xml:space="preserve">
+    <value>A nova senha foi alterada com êxito. </value>
+  </data>
+  <data name="PasswordError" xml:space="preserve">
+    <value>A senha atual está incorreta</value>
+  </data>
+  <data name="ErrorChangingPassword" xml:space="preserve">
+    <value>A senha não pode ser alterada, por favor tente mais tarde!</value>
+  </data>
 </root>
